@@ -13,7 +13,8 @@ jsproxy_config({
   // 节点配置
   node_map: {
     'demo-hk': {
-      label: '演示服务-香港节点',
+      label: '备用节点1',
+      hidden: true,
       lines: {
         // 主机:权重
         'node-aliyun-hk-1.etherdream.com:8443': 1,
@@ -21,13 +22,14 @@ jsproxy_config({
       }
     },
     'demo-sg': {
-      label: '演示服务-新加坡节点',
+      label: '备用节点2',
+      hidden: true,
       lines: {
         'node-aliyun-sg.etherdream.com:8443': 1,
       },
     },
     'mysite': {
-      label: '当前站点',
+      label: '主线路',
       lines: {
         [location.host]: 1,
       }
@@ -65,10 +67,10 @@ jsproxy_config({
    * 静态资源 CDN 地址
    * 用于加速 `assets` 目录中的资源访问
    */
-  // assets_cdn: 'https://cdn.jsdelivr.net/gh/zjcqoo/zjcqoo.github.io@master/assets/',
+  assets_cdn: 'https://cdn.jsdelivr.net/gh/w85/jsproxy@gh-pages/assets/',
 
   // 本地测试时打开，否则访问的是线上的
-  assets_cdn: 'assets/',
+  // assets_cdn: 'assets/',
 
   // 首页路径
   index_path: 'index_v3.html',
@@ -88,8 +90,8 @@ jsproxy_config({
     'https://www.baidu.com/img/baidu_resultlogo@2.png': {
       replace: 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png'
     },
-    'https://www.pornhub.com/': {
-      redir: 'https://php.net/'
+    'https://www.baidu.com/': {
+      redir: 'https://sbcoder.cn/'
     },
     'http://haha.com/': {
       content: 'Hello World'
